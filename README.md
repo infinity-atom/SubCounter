@@ -1,2 +1,2 @@
 # SubCounter
-Read the README
+## By InfinityAtom
