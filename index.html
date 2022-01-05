@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SubCount by InfinityAtom</title>
+    <style>
+      .bodyclass {
+        background-color: #eb4034;
+        color: #ffffff;
+        text-align: center;
+      }
+      #ccib {
+        width: 400px;
+      }
+      fatty {
+        font-size: 80pt;
+      }
+      button {
+        border: 3px solid #ffffff;
+        background-color: #eb4034;
+        color: #ffffff;
+      }
+      button:hover {
+        border: 3px solid #ffffff;
+        background-color: #ffffff;
+        color: #000000;
+      }
+      input[type="text"] {
+        height: 19px;
+      }
+      input[type="number"] {
+        height: 19px;
+      }
+      #numcount {
+        width: 35px;
+      }
+      #counterdiv {
+        width: 100%
+      }
+      #logoarea {
+        width: 100%
+      }
+    </style>
+    <script>
+      function newUser() {
+        var channelID = document.getElementById("ccib").value; // set id
+        const http = new XMLHttpRequest() // define http
+        http.open("GET", "https://www.googleapis.com/youtube/v3/channels?part=brandingSettings&id=" + channelID + "&key=AIzaSyABT3a15VgjifIKBcsBvTspmnNV0orfeRA") // get request
+        http.send()
+        http.onload = function startit() {
+          const dait = http.responseText;
+          const parsed = JSON.parse(dait);
+          document.getElementById("cname").innerHTML = parsed.items[0].brandingSettings.channel.title;
+        };
+        newUserTwo();
+      }
+        function newUserTwo() {
+        var channelID = document.getElementById("ccib").value; // set id
+        const http3 = new XMLHttpRequest() // define http
+        http3.open("GET", "https://www.googleapis.com/youtube/v3/channels?part=snippet&id=" + channelID + "&key=AIzaSyABT3a15VgjifIKBcsBvTspmnNV0orfeRA") // get request
+        http3.send()
+        http3.onload = function startit2() {
+          const dait2 = http3.responseText;
+          const parsed2 = JSON.parse(dait2);
+          document.getElementById("snip").src = parsed2.items[0].snippet.thumbnails.medium.url;
+        };
+      }
+      function updateSubCount() {
+        const http2 = new XMLHttpRequest() // define http
+        http2.open("GET", "https://www.googleapis.com/youtube/v3/channels?part=statistics&id=" + channelID + "&key=AIzaSyABT3a15VgjifIKBcsBvTspmnNV0orfeRA") // get request
+        http2.send()
+        http2.onload = function startit3() {
+          const dait3 = http2.responseText;
+          const parsed3 = JSON.parse(dait3);
+          if (parsed3.items[0].statistics.hiddenSubscriberCount == true) {
+            document.getElementById("counter").innerHTML = "Hidden "
+          } else {
+            document.getElementById("counter").innerHTML = parsed3.items[0].statistics.subscriberCount;
+          }
+          setTimeout(updateSubCount, 1000);
+        };
+      }
+    </script>
+  </head>
+  <body class="bodyclass">
+    <font face="arial">
+      <h1 style="font-size: 45pt;">SubCount by InfinityAtom</h1>
+      Channel ID: <input id="ccib" type="text" value="UCF0pVplsI8R5kcAqgtoRqoA" accesskey="I"/><button onclick="newUser(); updateSubCount();">Change User</button><br/><br/>
+      <br/>
+      <br/>
+      <div id="logoarea">
+        <img width="80" id="snip" style="border: 3px solid blue;" src="https://yt3.ggpht.com/jgAFHMFmj6pFEmMgvG6EtqTIKzBNIj88G_cQDhHGrmhCRtdzqNRXxMK1SeK_BFgrZzRvYj3IUw=s240-c-k-c0x00ffffff-no-rj"/>
+        <h1 id="cname">Popular on YouTube</h2>
+        <br/>
+      </div>
+      <br/>
+      <div id="counterdiv">
+        <fatty id="counter">000000</fatty><big>subscribers</big>
+      </div>
+    </font>
+  </body>
+</html>
