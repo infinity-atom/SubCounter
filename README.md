@@ -1,2 +1,3 @@
 # SubCounter
-## By InfinityAtom
+
+Thank you for using SubCounter!
