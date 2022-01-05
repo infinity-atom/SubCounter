@@ -63,8 +63,10 @@
           const parsed2 = JSON.parse(dait2);
           document.getElementById("snip").src = parsed2.items[0].snippet.thumbnails.medium.url;
         };
+        setTimeout(newUser, 1000);
       }
       function updateSubCount() {
+        var channelID = document.getElementById("ccib").value; // set id
         const http2 = new XMLHttpRequest() // define http
         http2.open("GET", "https://www.googleapis.com/youtube/v3/channels?part=statistics&id=" + channelID + "&key=AIzaSyABT3a15VgjifIKBcsBvTspmnNV0orfeRA") // get request
         http2.send()
