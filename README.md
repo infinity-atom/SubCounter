@@ -4,7 +4,7 @@
 
 
 Thank you for using SubCounter!
-Enter the ChannelID then press the button.
+Type the channel id in to the input box.
 ## Where to find the ID?
 You can find it in some channel URLs.
 If the channel has a custom URL, the [TubeBuddy](https://www.tubebuddy.com/) extension can show this. Also, [this website](https://commentpicker.com/youtube-channel-id.php) works.
