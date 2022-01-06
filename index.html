@@ -67,7 +67,6 @@
           const parsed2 = JSON.parse(dait2);
           document.getElementById("snip").src = parsed2.items[0].snippet.thumbnails.medium.url;
         };
-        setTimeout(newUser, 1000);
       }
       function updateSubCount() {
         var channelID = document.getElementById("ccib").value; // set id
@@ -82,7 +81,6 @@
           } else {
             document.getElementById("counter").innerHTML = parsed3.items[0].statistics.subscriberCount;
           }
-          setTimeout(updateSubCount, 1000);
         };
       }
     </script>
@@ -91,7 +89,7 @@
     <font face="arial">
       <h1 style="font-size: 45pt;">SubCounter by InfinityAtom</h1>
       Channel ID: <input id="ccib" type="text" value="UCF0pVplsI8R5kcAqgtoRqoA" accesskey="I"/><br/>
-      <button onclick="newUser(); updateSubCount(); this.disabled='true'">Start Checking</button><br/><br/>
+      <button onclick="newUser(); updateSubCount();">Go</button><br/><br/>
       <br/>
       <br/>
       <div id="logoarea">
