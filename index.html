@@ -54,6 +54,7 @@
           const dait = http.responseText;
           const parsed = JSON.parse(dait);
           document.getElementById("cname").innerHTML = parsed.items[0].brandingSettings.channel.title;
+          console.log("Title updated")
         };
         newUserTwo();
       }
@@ -66,6 +67,7 @@
           const dait2 = http3.responseText;
           const parsed2 = JSON.parse(dait2);
           document.getElementById("snip").src = parsed2.items[0].snippet.thumbnails.medium.url;
+          console.log("Snip updated.")
         };
       }
       function updateSubCount() {
@@ -78,8 +80,10 @@
           const parsed3 = JSON.parse(dait3);
           if (parsed3.items[0].statistics.hiddenSubscriberCount == true) {
             document.getElementById("counter").innerHTML = "Hidden "
+            console.log("Hidden SubCount.")
           } else {
             document.getElementById("counter").innerHTML = parsed3.items[0].statistics.subscriberCount;
+            console.log("SubCount updated.")
           }
         };
       }
