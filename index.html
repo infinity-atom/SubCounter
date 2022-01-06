@@ -45,8 +45,6 @@
       }
     </style>
     <script>
-      newUser();
-      updateSubCount();
       function newUser() {
         var channelID = document.getElementById("ccib").value; // set id
         const http = new XMLHttpRequest() // define http
@@ -92,7 +90,8 @@
   <body class="bodyclass">
     <font face="arial">
       <h1 style="font-size: 45pt;">SubCounter by InfinityAtom</h1>
-      Channel ID: <input id="ccib" type="text" value="UCF0pVplsI8R5kcAqgtoRqoA" accesskey="I"/><br/><br/>
+      Channel ID: <input id="ccib" type="text" value="UCF0pVplsI8R5kcAqgtoRqoA" accesskey="I"/><br/>
+      <button onclick="newUser(); updateSubCount(); this.disabled='true'">Start Checking</button><br/><br/>
       <br/>
       <br/>
       <div id="logoarea">
