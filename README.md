@@ -1,5 +1,6 @@
 # SubCounter
-[![Use](https://user-images.githubusercontent.com/50982527/148181488-5d192dc7-4310-4919-94d8-7e2cb808a02c.png)](/index.html)
+[Source Code](/index.html)
+[Website](https://infinity-atom.github.io/SubCounter/index.html)
 
 
 Thank you for using SubCounter!
